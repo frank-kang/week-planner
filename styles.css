@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.column-full {
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.column-third {
+  width: calc(100% / 3);
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td :nth-child(odd) {
+  border: solid black 1px;
+  margin: 0;
+  background-color: lightgray;
+}

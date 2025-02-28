@@ -7,51 +7,55 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form>
-  <div class="row">
-    <div class="column-full">
- <h1>Weekly Planner</h1>
-    <h2>Choose Day to Show Events</h2>
-    <p>Day of Week</p>
-    <select id="days" name="days">
-      <option value="Monday">Monday</option>
-      <option value="Tuesday">Tuesday</option>
-      <option value="Wednesday">Wednesday</option>
-      <option value="Thursday">Thursday</option>
-      <option value="Friday">Friday</option>
-      <option value="Saturday">Saturday</option>
-      <option value="Sunday">Sunday</option>
-    </select>
-    </div>
-    <dialog>Add New Event</dialog>
-  </form>
     <div class="row">
-    <div class="column-full">
-    <table>
-    <thead>
-      <tr>
-        <th>Time</th>
-        <th>Event</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-      <td>1</td>
-      <td>2</td>
-      <td>
-        <button>Edit</button>
-      <button>Delete</button>
-      </td>
-      </tr>
-    </tbody>
-    </table>
-   </div>
-</div>
-</div>
-
-<p>2023 Week Planner Inc</p>
-
+      <div class="colum-full">
+        <h1>Weekly Planner</h1>
+        <h2>Choose Day to Show Events</h2>
+        <form action="">
+          <p>Day of Week</p>
+          <select id="days" name="days">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </form>
+        <button class="open-modal">Add New Event</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-full">
+        <table>
+          <thead>
+            <tr>
+              <th>time</th>
+              <th>event</th>
+              <th>actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>some event</td>
+              <td>more items</td>
+              <td><button>EDIT</button><button>DELETE</button></td>
+            </tr>
+            <tr>
+              <td>more items</td>
+              <td>more items</td>
+              <td><button>EDIT</button><button>DELETE</button></td>
+            </tr>
+            <tr>
+              <td>more items</td>
+              <td>more items</td>
+              <td><button>EDIT</button><button>DELETE</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

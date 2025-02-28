@@ -2,6 +2,7 @@ var $days = document.querySelector('.open-modal');
 var $dialog = document.querySelector('dialog');
 var $classCancelModal = document.querySelector('.cancel-modal');
 var $classModalForm = document.querySelector('#modal-form');
+var $tagTbody = document.querySelector('tbody');
 var $classConfirm = document.querySelector('.confirm');
 if (!$days)
     throw new Error('$days query failed');
@@ -21,21 +22,23 @@ $classModalForm.addEventListener('submit', function (event) {
     formObject.notes = $formElements.notes.value;
     formObject.time = $formElements.time.value;
     $dialog.close();
-    return formObject;
     // console.log('formObject', formObject);
 });
-function renderElements(formObject) {
+function renderElements(formData) {
     var edit = document.createElement('button');
-    var ;
-    delete ;
-    document.createElement('button');
+    var deleteButton = document.createElement('button');
     var $classTr = document.createElement('tr');
     var $classTd = document.createElement('td');
     var $classTd2 = document.createElement('td');
     var $classTd3 = document.createElement('td');
-    $classTr.appendChild('$classTd');
-    $classTr.appendChild('$classTd2');
-    $classTr.appendChild('$classTd3');
-    $classTd3.appendChild('edit');
-    $classTd3.appendChild('delete');
+    $classTd.textContent = formData.time;
+    $classTd2.textContent = formData.notes;
+    $classTr.appendChild($classTd);
+    $classTr.appendChild($classTd2);
+    $classTr.appendChild($classTd3);
+    $classTd3.appendChild(edit);
+    $classTd3.appendChild(deleteButton);
+    $tagTbody.appendChild($classTr);
 }
+console.log(formData);
+renderElements(formData);

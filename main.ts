@@ -16,6 +16,7 @@ const $classCancelModal = document.querySelector('.cancel-modal');
 const $classModalForm = document.querySelector(
   '#modal-form',
 ) as HTMLFormElement;
+const $tagTbody = document.querySelector('tbody');
 
 const $classConfirm = document.querySelector('.confirm');
 
@@ -30,19 +31,19 @@ $classCancelModal.addEventListener('click', () => {
   $dialog.close();
 });
 
-$classModalForm.addEventListener('submit', (event: Event): object => {
+$classModalForm.addEventListener('submit', (event: Event) => {
   event.preventDefault();
   const $formElements = $classModalForm.elements as FormElements;
   const formObject: FormObject = {};
   formObject.day = $formElements.day.value;
   formObject.notes = $formElements.notes.value;
   formObject.time = $formElements.time.value;
+
   $dialog.close();
-  return formObject;
   // console.log('formObject', formObject);
 });
 
-function renderElements(formObject: Object): HTMLTableElement {
+function renderElements(formData: FormObject) {
   const edit = document.createElement('button');
   const deleteButton = document.createElement('button');
 
@@ -51,9 +52,17 @@ function renderElements(formObject: Object): HTMLTableElement {
   const $classTd2 = document.createElement('td');
   const $classTd3 = document.createElement('td');
 
-  $classTr.appendChild('$classTd');
-  $classTr.appendChild('$classTd2');
-  $classTr.appendChild('$classTd3');
-  $classTd3.appendChild('edit');
-  $classTd3.appendChild('deleteButton');
+  $classTd.textContent = formData.time;
+  $classTd2.textContent = formData.notes;
+
+  $classTr.appendChild($classTd);
+  $classTr.appendChild($classTd2);
+  $classTr.appendChild($classTd3);
+  $classTd3.appendChild(edit);
+  $classTd3.appendChild(deleteButton);
+
+  $tagTbody.appendChild($classTr);
 }
+
+console.log(formData);
+renderElements(formData);

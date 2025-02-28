@@ -12,7 +12,7 @@ function readData() {
         };
     }
 }
-function writeDate() {
+function writeData() {
     var plannerJSON = JSON.stringify(data);
     localStorage.setItem('planner-storage', plannerJSON);
 }

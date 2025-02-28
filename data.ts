@@ -18,7 +18,7 @@ function readData(): Data {
   }
 }
 
-function writeDate(): void {
+function writeData(): void {
   const plannerJSON = JSON.stringify(data);
   localStorage.setItem('planner-storage', plannerJSON);
 }

@@ -38,12 +38,13 @@ $classModalForm.addEventListener('submit', (event: Event) => {
   formObject.day = $formElements.day.value;
   formObject.notes = $formElements.notes.value;
   formObject.time = $formElements.time.value;
-
+  data.entries.push(formObject);
+  renderElements(data);
   $dialog.close();
   // console.log('formObject', formObject);
 });
 
-function renderElements(formData: FormObject) {
+function renderElement(entry) {
   const edit = document.createElement('button');
   const deleteButton = document.createElement('button');
 
@@ -52,7 +53,7 @@ function renderElements(formData: FormObject) {
   const $classTd2 = document.createElement('td');
   const $classTd3 = document.createElement('td');
 
-  $classTd.textContent = formData.time;
+  $classTd.textContent = formData.entries;
   $classTd2.textContent = formData.notes;
 
   $classTr.appendChild($classTd);
@@ -63,6 +64,3 @@ function renderElements(formData: FormObject) {
 
   $tagTbody.appendChild($classTr);
 }
-
-console.log(formData);
-renderElements(formData);

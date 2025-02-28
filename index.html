@@ -26,13 +26,13 @@
         <dialog>
           <form id="modal-form" action="">
             <label>Time of Event:</label>
-            <select class="time">
+            <select name="time" class="time">
               <option value="1:00">1:00pm</option>
               <option value="2:00">2:00pm</option>
-              <option value="3:00">:00pm</option>
+              <option value="3:00">3:00pm</option>
             </select>
             <label for="daysOfWeek">Day of the Week:</label>
-            <select id="daysOfWeek" name="days">
+            <select id="daysOfWeek" name="day" class="day">
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
               <option value="Wednesday">Wednesday</option>
@@ -42,7 +42,7 @@
               <option value="Sunday">Sunday</option>
             </select>
             <p>Event Information:</p>
-            <textarea class="notes"></textarea>
+            <textarea name="notes" class="notes"></textarea>
             <button class="cancel-modal">Cancel</button>
             <button class="confirm">Confirm</button>
           </form>

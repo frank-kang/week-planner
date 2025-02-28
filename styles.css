@@ -23,3 +23,12 @@ td :nth-child(odd) {
   margin: 0;
   background-color: lightgray;
 }
+
+thead > tr:nth-child(odd) {
+  color: white;
+  margin: 0 auto;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: lightgray;
+}

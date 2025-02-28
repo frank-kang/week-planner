@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Weekly Planner</h1>
+    <form>
+  <div class="row">
+    <div class="column-full">
+ <h1>Weekly Planner</h1>
     <h2>Choose Day to Show Events</h2>
     <p>Day of Week</p>
     <select id="days" name="days">
@@ -19,6 +22,36 @@
       <option value="Saturday">Saturday</option>
       <option value="Sunday">Sunday</option>
     </select>
+    </div>
+    <dialog>Add New Event</dialog>
+  </form>
+    <div class="row">
+    <div class="column-full">
+    <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Event</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>
+        <button>Edit</button>
+      <button>Delete</button>
+      </td>
+      </tr>
+    </tbody>
+    </table>
+   </div>
+</div>
+</div>
+
+<p>2023 Week Planner Inc</p>
+
     <script src="main.js"></script>
   </body>
 </html>

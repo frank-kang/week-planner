@@ -40,9 +40,15 @@ $classModalForm.addEventListener('submit', (event: Event) => {
   };
 
   data.entries.push(formObject);
-  console.log(data);
+  // console.log(data);
   writeData();
-  // renderElement(data);
+  for (const i of data.entries) {
+    const entry = i;
+    const $tr = renderElement(entry);
+    const $tagTbody = document.querySelector('tbody');
+    $tagTbody.appendChild($tr);
+  }
+  $classModalForm.reset();
   $dialog.close();
   // console.log('formObject', formObject);
 });
@@ -68,11 +74,11 @@ function renderElement(entry: FormObject): HTMLTableRowElement {
   return $classTr;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  for (const i of data.entries) {
-    const entry = i;
-    const $td = renderElement(entry);
-    const $tagTbody = document.querySelector('tbody');
-    $tagTbody.appendChild($td);
-  }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   for (const i of data.entries) {
+//     const entry = i;
+//     const $td = renderElement(entry);
+//     const $tagTbody = document.querySelector('tbody');
+//     $tagTbody.appendChild($td);
+//   }
+// });

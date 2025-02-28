@@ -24,8 +24,12 @@ td :nth-child(odd) {
   background-color: lightgray;
 }
 
+thead {
+  color: black;
+}
+
 thead > tr:nth-child(odd) {
-  color: white;
+  /* color: white; */
   margin: 0 auto;
 }
 

@@ -22,9 +22,16 @@ $classModalForm.addEventListener('submit', function (event) {
         time: $formElements.time.value,
     };
     data.entries.push(formObject);
-    console.log(data);
+    // console.log(data);
     writeData();
-    // renderElement(data);
+    for (var _i = 0, _a = data.entries; _i < _a.length; _i++) {
+        var i = _a[_i];
+        var entry = i;
+        var $tr = renderElement(entry);
+        var $tagTbody = document.querySelector('tbody');
+        $tagTbody.appendChild($tr);
+    }
+    $classModalForm.reset();
     $dialog.close();
     // console.log('formObject', formObject);
 });
@@ -44,12 +51,11 @@ function renderElement(entry) {
     $classTd3.appendChild(deleteButton);
     return $classTr;
 }
-document.addEventListener('DOMContentLoaded', function () {
-    for (var _i = 0, _a = data.entries; _i < _a.length; _i++) {
-        var i = _a[_i];
-        var entry = i;
-        var $td = renderElement(entry);
-        var $tagTbody = document.querySelector('tbody');
-        $tagTbody.appendChild($td);
-    }
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   for (const i of data.entries) {
+//     const entry = i;
+//     const $td = renderElement(entry);
+//     const $tagTbody = document.querySelector('tbody');
+//     $tagTbody.appendChild($td);
+//   }
+// });
